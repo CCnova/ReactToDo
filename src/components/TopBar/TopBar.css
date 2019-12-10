@@ -1,13 +1,20 @@
 .topHead {
     background-color: #222;
-    height: 150px;
+    height: 80px;
     padding: 20px;
     color: white;
+    text-align: center;
 }
 
 .logo {
+    float: left;
     animation: logo-spin infinite 20s linear;
     height: 80px;
+}
+
+.topName {
+  text-align: center;
+  font-size: 3rem;
 }
 
 
