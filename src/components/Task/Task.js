@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import classes from './Task.css';
 
 class Task extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            titulo: 'task1',
-            doDate: 'amanha',
+            titulo: '',
+            doDate: '',
             done: false
         };
     }
@@ -15,9 +16,9 @@ class Task extends Component {
 
     render() {
         return (
-        <div>
-            <h1>Nome: {this.state.titulo}</h1>
-            <span>Data: {this.state.doDate}</span>
+        <div className={classes.taskDescription}>
+            <span className={classes.taskProp}>Name: {this.props.name}</span>
+            <span className={classes.taskProp}>Date: {this.props.doDate}</span>
         </div>
         );
     }

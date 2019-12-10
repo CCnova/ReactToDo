@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Task from '../../components/Task/Task';
+import classes from './TaskList.css';
 
 class TaskList extends Component {
     constructor(props) {
@@ -10,10 +11,24 @@ class TaskList extends Component {
         };
     }
 
+    newTask = <Task name="Task1" doDate="Amanha" />;
+    newTaskList = [this.newTask];
+
     render() {
         return (
             <div>
-                <Task />
+                <ul>
+                    {this.newTaskList.map(task => {
+                        return <li className={classes.taskEl}>{task}</li>;
+                    })}
+                    {this.newTaskList.map(task => {
+                        return <li className={classes.taskEl}>{task}</li>;
+                    })}
+                    {this.newTaskList.map(task => {
+                        return <li className={classes.taskEl}>{task}</li>;
+                    })}
+
+                </ul>
             </div>
         );
     }    

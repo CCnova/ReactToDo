@@ -4,6 +4,13 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import TaskList from './containers/TaskList/TaskList';
 
+/* To Do:
+
+  Adicionar metodo para clique dos botoes
+
+*/
+
+
 class App extends Component {
   render() {
     return (
