@@ -60,7 +60,7 @@ class TaskList extends Component {
                         })}
                     </tbody>
                 </table>
-
+                
                 <ToolBar toDelete={this.deleteTask} toAdd={this.addTask}/>
                
                

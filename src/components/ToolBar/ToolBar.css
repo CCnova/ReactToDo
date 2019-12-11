@@ -2,11 +2,18 @@
     text-align: center;
 }
 
-.unbulletList {
-    list-style-type: none;
+.listCenter {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.horizontalEl {
-    display: inline-block;
-    margin-right: 5em;
+.borderless {
+    border: none;
 }
+/* .toolBar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+} */

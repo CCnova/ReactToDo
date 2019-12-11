@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from './Button/Button';
 import UserInput from './UserInput/UserInput';
 import classes from './ToolBar.css';
+import Aux from '../../hoc/Aux';
 
 /* TO DO:
 
@@ -70,35 +71,53 @@ class ToolBar extends Component {
 
     render() {
         return(
-            <div className={classes.toolBar}>
-                {/* <table className="table">
-                    <tr>
-                        <th scope="col"><Button btText="Add" clicked={this.addNewTaskHandler} /></th>
-                        <th><Button btText="Delete" clicked={this.deleteTaskHandler} /></th>
-                        <th><UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" /></th>
-                    </tr>
-                </table> */}
-                <ul className={"list-group list-group-horizontal"}>
-                    <li className={"list-group-item"}>
-                        <Button btText="Add" clicked={this.addNewTaskHandler}/>
-                    </li>
-                    <li className={"list-group-item"}>
-                        <Button btText="Delete" clicked={this.deleteTaskHandler}/>
-                    </li>
-                </ul>
+            // <div className={classes.toolBar}>
+            //     <ul className={"list-group list-group-horizontal ${classes.listSpace}"}>
+            //         <li className={`list-group-item`}>
+            //             <Button btText="Add" clicked={this.addNewTaskHandler}/>
+            //         </li>
+            //         <li className={`list-group-item`}>
+            //             <Button btText="Delete" clicked={this.deleteTaskHandler}/>
+            //         </li>
+            //     </ul>
     
-                <ul className={"list-group list-group-horizontal"}>
-                    <li className={"list-group-item"}>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'name')} inputName="Name"/>
-                    </li>
-                    <li className={"list-group-item"}>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'date')} inputName="Date"/>
-                    </li>
-                    <li className={"list-group-item"}>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" />
-                    </li>
-                </ul>
+            //     <ul className={"list-group list-group-horizontal ${classes.listSpace}"}>
+            //         <li className={"list-group-item"}>
+            //             <UserInput onType={(event) => this.userTypedHandler(event, 'name')} inputName="Name"/>
+            //         </li>
+            //         <li className={"list-group-item"}>
+            //             <UserInput onType={(event) => this.userTypedHandler(event, 'date')} inputName="Date"/>
+            //         </li>
+            //         <li className={"list-group-item"}>
+            //             <UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" />
+            //         </li>
+            //     </ul>
     
+            // </div>
+
+            <div className="d-flex justify-content-xl-center justify-content-lg-center justify-content-sm-center">
+                <div>
+                    <ul className={`list-group list-group-horizontal`}>
+                        <li className={`list-group-item ${classes.borderless}`}>
+                            <Button btText="Add" clicked={this.addNewTaskHandler} />
+                        </li>
+                        <li className={`list-group-item ${classes.borderless}`}>
+                            <Button btText="Delete" clicked={this.deleteTaskHandler} />
+                        </li>
+                    </ul>
+            
+                    <ul className={"list-group"}>
+                        <li className={`list-group-item ${classes.borderless}`}>
+                            <UserInput onType={(event) => this.userTypedHandler(event, 'name')} inputName="Name" />
+                        </li>
+                        <li className={`list-group-item ${classes.borderless}`}>
+                            <UserInput onType={(event) => this.userTypedHandler(event, 'date')} inputName="Date" />
+                        </li>
+                        <li className={`list-group-item ${classes.borderless}`}>
+                            <UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         );
     }
