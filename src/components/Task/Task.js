@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Task.css';
+import Aux from '../../hoc/Aux';
 
 class Task extends Component {
     constructor(props) {
@@ -16,10 +17,10 @@ class Task extends Component {
 
     render() {
         return (
-        <div className={classes.taskDescription}>
-            <span className={classes.taskProp}>Name: {this.props.name}</span>
-            <span className={classes.taskProp}>Date: {this.props.doDate}</span>
-        </div>
+            <Aux>
+                <span className={classes.taskProp}>Name: {this.props.name}</span>
+                <span className={classes.taskProp}>Date: {this.props.doDate}</span>
+            </Aux>
         );
     }
 }

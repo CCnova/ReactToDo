@@ -39,12 +39,36 @@ class TaskList extends Component {
     render() {
         return (
             <div>
-                <ul>
+                
+                <table className="table">
+                    <thead className="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Task</th>
+                            <th scope="col">Dates</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {this.state.taskList.map((task, index) => {
+                            return (
+                                <tr>
+                                    <th scope="row">{index + 1}</th>
+                                    <td>{task}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+
+                <ToolBar toDelete={this.deleteTask} toAdd={this.addTask}/>
+               
+               
+                {/* <ul>
                     {this.state.taskList.map(task => {
                         return <li className={classes.taskEl}>{task}</li>;
                     })}
-                </ul>
-                <ToolBar toDelete={this.deleteTask} toAdd={this.addTask}/>
+                </ul> */}
             </div>
         );
     }    

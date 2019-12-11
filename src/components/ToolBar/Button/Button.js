@@ -1,14 +1,9 @@
 import React from 'react';
-
-/* To Do:
-
-    Adicionar metodo para clique
-    
-*/
+import classes from './Button.css';
 
 const button = (props) => { 
     return (
-        <button onClick={props.clicked}>{props.btText}</button>
+        <button type="button" className={"btn btn-dark" + classes.buttonSecondary + " " + classes.lightBlue} onClick={props.clicked}>{props.btText}</button>
     );
 };
 

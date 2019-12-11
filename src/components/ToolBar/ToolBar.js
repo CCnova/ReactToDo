@@ -70,28 +70,32 @@ class ToolBar extends Component {
 
     render() {
         return(
-            <div>
-                <ul className={classes.unbulletList}>
-                    <li className={classes.horizontalEl}>
+            <div className={classes.toolBar}>
+                {/* <table className="table">
+                    <tr>
+                        <th scope="col"><Button btText="Add" clicked={this.addNewTaskHandler} /></th>
+                        <th><Button btText="Delete" clicked={this.deleteTaskHandler} /></th>
+                        <th><UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" /></th>
+                    </tr>
+                </table> */}
+                <ul className={"list-group list-group-horizontal"}>
+                    <li className={"list-group-item"}>
                         <Button btText="Add" clicked={this.addNewTaskHandler}/>
                     </li>
-                    <li className={classes.horizontalEl}>
+                    <li className={"list-group-item"}>
                         <Button btText="Delete" clicked={this.deleteTaskHandler}/>
-                    </li>
-                    <li className={classes.horizontalEl}>
-                        <p>Delete task of number:</p>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'delete')} />
                     </li>
                 </ul>
     
-                <ul className={classes.unbulletList}>
-                    <li className={classes.horizontalEl}>
-                        <p>Nome:</p>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'name')}/>
+                <ul className={"list-group list-group-horizontal"}>
+                    <li className={"list-group-item"}>
+                        <UserInput onType={(event) => this.userTypedHandler(event, 'name')} inputName="Name"/>
                     </li>
-                    <li className={classes.horizontalEl}>
-                        <p>Data:</p>
-                        <UserInput onType={(event) => this.userTypedHandler(event, 'date')} />
+                    <li className={"list-group-item"}>
+                        <UserInput onType={(event) => this.userTypedHandler(event, 'date')} inputName="Date"/>
+                    </li>
+                    <li className={"list-group-item"}>
+                        <UserInput onType={(event) => this.userTypedHandler(event, 'delete')} inputName="Number of task" />
                     </li>
                 </ul>
     
