@@ -43,26 +43,30 @@ class TaskList extends Component {
         return (
             <div>
                 
-                <table className="table">
-                    <thead className="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Task</th>
-                            <th scope="col">Dates</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {this.state.taskList.map((task, index) => {
-                            return (
-                                <tr key={index}>
-                                    <th scope="row">{index + 1}</th>
-                                    <Task name={task.name} doDate={task.doDate} key={this.state.taskList.length} />
+                <div className="card">
+                    <div className="table-responsive">
+                        <table className="table table-bordered">
+                            <thead className="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Task</th>
+                                    <th scope="col">Dates</th>
                                 </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                            </thead>
+
+                            <tbody>
+                                {this.state.taskList.map((task, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <th scope="row">{index + 1}</th>
+                                            <Task name={task.name} doDate={task.doDate} key={this.state.taskList.length} />
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 
                 <ToolBar toDelete={this.deleteTask} toAdd={this.addTask}/>
                

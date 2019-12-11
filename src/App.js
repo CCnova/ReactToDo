@@ -6,7 +6,8 @@ import TaskList from './containers/TaskList/TaskList';
 
 /* To Do:
 
-  Adicionar metodo para clique dos botoes
+  Adicionar checkbox para indicar que a tarefa esta feita
+  Adicionar alerta para confirmar se o usuario quer deletar tarefa que nao esta feita
 
 */
 
