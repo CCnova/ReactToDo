@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from './Button/Button';
 import UserInput from './UserInput/UserInput';
 import classes from './ToolBar.css';
-import Aux from '../../hoc/Aux';
 
 /* TO DO:
 

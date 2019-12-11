@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Task from '../../components/Task/Task';
-import classes from './TaskList.css';
 import ToolBar from '../../components/ToolBar/ToolBar';
 
 class TaskList extends Component {
@@ -8,7 +7,7 @@ class TaskList extends Component {
         super(props);
 
         this.state = {
-            taskList: [<Task name="Task1" doDate="Amanha" />],
+            taskList: [],
         };
     }
 
@@ -26,7 +25,11 @@ class TaskList extends Component {
     }
 
     addTask = (newTaskName, newTaskDate) => {
-        let newTask = <Task name={newTaskName} doDate={newTaskDate} />
+        let newTask = {
+            name: newTaskName,
+            doDate: newTaskDate,
+            done: false,
+        };
 
         let newTaskList = this.state.taskList;
         newTaskList.push(newTask);
@@ -52,9 +55,9 @@ class TaskList extends Component {
                     <tbody>
                         {this.state.taskList.map((task, index) => {
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <th scope="row">{index + 1}</th>
-                                    <td>{task}</td>
+                                    <Task name={task.name} doDate={task.doDate} key={this.state.taskList.length} />
                                 </tr>
                             );
                         })}
