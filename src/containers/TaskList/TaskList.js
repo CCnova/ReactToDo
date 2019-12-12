@@ -39,6 +39,15 @@ class TaskList extends Component {
         });
     }
 
+    taskCheckHandler = (taskIndex) => {
+        let auxList = this.state.taskList;
+        auxList[taskIndex].done = !auxList[taskIndex].done;
+        
+        this.setState({
+            taskList: auxList
+        });
+    }
+
     render() {
         return (
             <div>
@@ -58,8 +67,7 @@ class TaskList extends Component {
                                 {this.state.taskList.map((task, index) => {
                                     return (
                                         <tr key={index}>
-                                            <th scope="row">{index + 1}</th>
-                                            <Task name={task.name} doDate={task.doDate} key={this.state.taskList.length} />
+                                            <Task name={task.name} doDate={task.doDate} done={task.done} checked={() => this.taskCheckHandler(index)} key={this.state.taskList.length} />
                                         </tr>
                                     );
                                 })}
