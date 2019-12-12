@@ -48,6 +48,15 @@ class TaskList extends Component {
         });
     }
 
+    deleteTaskHandler = (taskIndex) => {
+        let newList = this.state.taskList;
+        newList.splice(taskIndex, 1);
+
+        this.setState({
+            taskList: newList
+        });
+    }
+
     render() {
         return (
             <div>
@@ -67,7 +76,7 @@ class TaskList extends Component {
                                 {this.state.taskList.map((task, index) => {
                                     return (
                                         <tr key={index}>
-                                            <Task name={task.name} doDate={task.doDate} done={task.done} checked={() => this.taskCheckHandler(index)} key={this.state.taskList.length} />
+                                            <Task name={task.name} doDate={task.doDate} done={task.done} checked={() => this.taskCheckHandler(index)} key={this.state.taskList.length} delete={() => this.deleteTaskHandler(index)}/>
                                         </tr>
                                     );
                                 })}

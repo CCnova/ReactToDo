@@ -1,6 +1,6 @@
 import React from 'react';
 import Aux from '../../hoc/Aux';
-
+import Button from '../ToolBar/Button/Button';
 const task = (props) => {
     
     function renderTask() {
@@ -15,7 +15,10 @@ const task = (props) => {
         } else {
             return (
                 <Aux>
-                    <th scope="row"><input type="checkbox" defaultChecked={props.done} onChange={props.checked} aria-label="task done" /></th>
+                    <th scope="row">
+                        <input type="checkbox" defaultChecked={props.done} onChange={props.checked} aria-label="task done" />
+                        <Button btText="Delete" clicked={props.delete}/>
+                    </th>
                     <td>{props.name}</td>
                     <td>{props.doDate}</td>
                 </Aux>
