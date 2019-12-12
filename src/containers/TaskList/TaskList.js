@@ -68,7 +68,7 @@ class TaskList extends Component {
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Task</th>
-                                    <th scope="col">Dates</th>
+                                    <th scope="col">Date</th>
                                 </tr>
                             </thead>
 
